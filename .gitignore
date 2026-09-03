@@ -1,0 +1,103 @@
+# ==========================================
+# 1. Obsidian Specific (核心配置与状态)
+# ==========================================
+# [必须忽略] 工作区状态与缓存（多设备同步必避，防止 UI 冲突）
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# [必须忽略] 回收站与临时备份
+.trash/
+*.backup
+
+# [核心资产提示] 以下文件必须保留在 Git 中同步：
+# 1. 基础配置：app.json, appearance.json, hotkeys.json, community-plugins.json 等
+# 2. 画图文件：*.excalidraw, *.excalidraw.md, *.canvas (本质是 JSON/文本，Git 完美支持版本控制)
+# 3. 插件配置：plugins/<插件名>/data.json (包含 Excalidraw 的全局画笔、字体等个性化设置)
+
+
+# ==========================================
+# 2. Obsidian Plugins Cache (插件本地缓存)
+# ==========================================
+# 忽略所有插件产生的本地数据库、日志和临时缓存（已通配覆盖 Excalidraw 等所有插件的潜在缓存）
+.obsidian/plugins/*/cache/
+.obsidian/plugins/*/temp/
+.obsidian/plugins/*/*.db
+.obsidian/plugins/*/*.sqlite
+.obsidian/plugins/*/*.log
+
+
+# ==========================================
+# 3. System Files (操作系统垃圾文件)
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+# Linux
+*~
+.directory
+
+
+# ==========================================
+# 4. Editor & IDE (编辑器临时文件)
+# ==========================================
+.vscode/
+*.code-workspace
+*.swp
+*.swo
+.project
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+
+# ==========================================
+# 5. Large Data / Binary (大型附件与二进制)
+# ==========================================
+# 【画图附件同步策略】：
+# Excalidraw 导出的 SVG (矢量图) 体积小且无限放大不失真，默认保留在 Git 中。
+# 如果您在 Excalidraw 中设置了导出高清 PNG/JPG，且数量庞大导致仓库膨胀，
+# 请取消本文件最下方图片格式的注释，或为图片开启 Git LFS。
+
+# 视频与音频
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.mp3
+*.wav
+
+# 压缩包与归档
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# 专业软件/大型数据文件 (结合航空航天/CFD 背景)
+*.vtk
+*.cgns
+*.h5
+*.hdf5
+*.nc
+
+# 可执行文件与系统镜像
+*.exe
+*.dmg
+*.iso
+*.app
+
+# [可选] 如果画图导出的位图(截图/导出图)过多，取消以下注释以忽略它们：
+*.png
+*.jpg
+*.jpeg
+*.gif
